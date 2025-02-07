@@ -43,6 +43,7 @@ app.use(expressSession({
         httponly: true
     }
 }));
+app.use(tempData);
 app.use(authMiddleware);
 app.use(routes);
 
