@@ -1,0 +1,64 @@
+{{setTitle "create"}}
+
+<section class="create-hero">
+    <div class="container">
+        <h2>Create New Product</h2>
+        <p>Fill in the details below to add a new product to the catalog.</p>
+    </div>
+</section>
+
+<section class="create-form">
+    <div class="container">
+        <form method="POST">
+            <div class="form-group">
+                <label for="brand">Brand:</label>
+                <input type="text" id="brand" name="brand" value="{{laptopData.brand}}">
+            </div>
+            <div class="form-group">
+                <label for="model">Model:</label>
+                <input type="text" id="model" name="model" value="{{laptopData.model}}">
+            </div>
+            <div class="form-group">
+                <label for="hard-disk">Hard Disk:</label>
+                <input type="text" id="hard-disk" name="hardDisk" value="{{laptopData.hardDisk}}">
+            </div>
+            <div class="form-group">
+                <label for="screen-size">Screen Size:</label>
+                <input type="text" id="screen-size" name="screenSize" value="{{laptopData.screenSize}}">
+            </div>
+            <div class="form-group">
+                <label for="ram">RAM:</label>
+                <input type="text" id="ram" name="ram" value="{{laptopData.ram}}">
+            </div>
+            <div class="form-group">
+                <label for="operating-system">Operating System:</label>
+                <input type="text" id="operating-system" name="operatingSystem" value="{{laptopData.operatingSystem}}">
+            </div>
+            <div class="form-group">
+                <label for="cpu">CPU:</label>
+                <input type="text" id="cpu" name="cpu" value="{{laptopData.cpu}}">
+            </div>
+            <div class="form-group">
+                <label for="gpu">GPU:</label>
+                <input type="text" id="gpu" name="gpu" value="{{laptopData.gpu}}">
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="text" id="price" name="price" value="{{laptopData.price}}">
+            </div>
+            <div class="form-group">
+                <label for="gpu">Color:</label>
+                <input type="text" id="color" name="color" value="{{laptopData.color}}">
+            </div>
+            <div class="form-group">
+                <label for="gpu">Weight:</label>
+                <input type="text" id="weight" name="weight" value="{{laptopData.weight}}">
+            </div>
+            <div class="form-group">
+                <label for="image">Image:</label>
+                <input type="text" id="image" name="imageUrl" value="{{laptopData.imageUrl}}">
+            </div>
+            <button type="submit" class="btn">Create Product</button>
+        </form>
+    </div>
+</section>
