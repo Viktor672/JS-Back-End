@@ -1,0 +1,36 @@
+{{setTitle "Details"}}
+
+<section id="details-info">
+    <h1>Details</h1>
+    <div class="volcano-image">
+        <img src="{{volcanoData.image}}" alt="{{volcanoData.name}}">
+    </div>
+
+    <div class="volcano-info">
+        <div class="volcano-text">
+            <h1 id="name">{{volcanoData.name}}</h1>
+            <h3 id="location">Location: {{volcanoData.location}}</h3>
+            <p id="type">Volcano Type: {{volcanoData.typeVolcano}}</p>
+            <p id="elevation"><span>Elevation: {{volcanoData.elevation}}</span></p>
+            <p id="last-eruption">Year of Last Eruption: {{volcanoData.lastEruption}}</p>
+            <p id="votes">Vote's Count: {{voteCount}}</p>
+            <p id="description">{{volcanoData.description}}</p>
+        </div>
+        <div class="product-btn">
+            {{#if user}}
+            {{#if isOwner}}
+            <div class="author">
+                <a href="/{{volcanoData.id}}/edit" class="btn-edit">Edit</a>
+                <a href="/{{volcanoData.id}}/delete" class="btn-delete">Delete</a>
+            </div>
+            {{else}}
+            {{#if hasVoted}}
+            <p class="vote-message">You've already voted for this volcano!</p>
+            {{else}}
+            <a href="/{{volcanoData.id}}/vote" class="btn-vote">Vote</a>
+            {{/if}}
+        </div>
+        {{/if}}
+        {{/if}}
+    </div>
+</section>

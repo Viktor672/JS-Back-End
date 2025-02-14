@@ -1,0 +1,28 @@
+{{setTitle "Search"}}
+
+<section class="volcano-search">
+    <h1>Search</h1>
+
+    <form class="search-form" method="GET">
+        <input type="text" class="search-volcano" name="search" placeholder="Search by Name..." value="{{query.search}}">
+        <select id="type" name="typeVolcano">
+            {{#each categories}}
+            <option value="{{value}}" {{selected}}>{{label}}</option>
+            {{/each}}
+        </select>
+        <button type="submit" class="btn-search">Search</button>
+    </form>
+
+    <div class="search-result">
+        <div class="search-list">
+            {{#each volcano}}
+            {{>volcano}}
+            {{else}}
+            <div class="no-match">
+                <p>No match was found!</p>
+            </div>
+            {{/each}}
+        </div>
+
+    </div>
+</section>
