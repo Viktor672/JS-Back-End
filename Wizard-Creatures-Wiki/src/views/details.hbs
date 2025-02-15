@@ -1,0 +1,60 @@
+{{setTitle "Details"}}
+
+<section id="details-page">
+
+    <div class="main_card">
+        <div class="card_left">
+            <div class="card_datails">
+
+                <h1>Name: {{wizardData.name}}</h1>
+                <h3>Created by an author: {{userData.firstName}} {{userData.lastName}}</h3>
+                <div class="card_character">
+                    <p class="card-species">Species: {{wizardData.species}}</p>
+                    <p class="card-skin">Skin colour: {{wizardData.skinColor}}</p>
+                    <p class="card-eye">Eye Colour: {{wizardData.eyeColor}}</p>
+                </div>
+
+                <p class="disc">Description: {{wizardData.description}}</p>
+
+                {{#if user}}
+                <div class="social-btn">
+                    {{#if isOwner}}
+                    <a href="/{{wizardData._id}}/edit" class="edit-btn">Edit</a>
+                    <a href="/{{wizardData._id}}/delete" class="del-btn">Delete</a>
+                    {{else}}
+                    {{#if hasVoted}}
+                    <p class="thanks-for-vote">Thanks For Voting</p>
+                    {{else}}
+                    <a href="/{{wizardData._id}}/vote" class="vote-up">Vote</a>
+                    {{/if}}
+                    {{/if}}
+                </div>
+                {{/if}}
+            </div>
+        </div>
+        <div class="card_right">
+            <img src="{{wizardData.image}}" alt="{{wizardData.name}}">
+        </div>
+    </div>
+
+</section>
+
+<section id="votes">
+    <div class="vote-info">
+        <div class="card_left">
+            <div class="card_datails">
+                <h1>Votes</h1>
+                <div class="card_vote">
+                    <!-- Show the rating of votes, if there are no votes yet, the number must be 0. -->
+                    <p class="PV">Total rating of votes: {{voteCount}}</p>
+                </div>
+                {{#if hasVotes}}
+
+                <p class="disc">People who voted for the post - {{userEmails}}
+                    {{else}}
+                <p class="disc">People who voted for the post - No one has voted yet.</p>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</section>
